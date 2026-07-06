@@ -1,5 +1,5 @@
 """
-Hour 2 — Creates a deliberately messy copy of the raw data for cleaning practice.
+Creates a deliberately messy copy of the raw data for cleaning practice.
 Injects the 5 most common real-world data defects:
   1. Duplicate rows        (system exported twice)
   2. Missing values        (feed dropped some closes)

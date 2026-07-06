@@ -1,5 +1,5 @@
 """
-Hour 6 — Exploratory Data Analysis
+Exploratory Data Analysis
 Interrogates the star schema to answer the brief's four questions:
   1. Who performed best/worst?
   2. Which stock is riskiest (most volatile)?
