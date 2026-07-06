@@ -5,7 +5,7 @@ Injects the 5 most common real-world data defects:
   2. Missing values        (feed dropped some closes)
   3. Impossible outliers   (fat-finger data entry)
   4. Inconsistent text     (ticker typed in mixed case / extra spaces)
-  5. Invalid values        (negative volume — impossible in reality)
+  5. Invalid values        (negative volume - impossible in reality)
 
 Seeded so everyone gets the same mess (reproducibility matters).
 """

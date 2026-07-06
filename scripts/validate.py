@@ -1,7 +1,7 @@
 """
-Hour 4 — Data Quality Gate (the inspector)
+Data Quality Gate (the inspector)
 Runs quality checks against a dataset and reports pass/fail per check.
-NEVER fixes anything — fixing is clean_data.py's job.
+NEVER fixes anything - fixing is clean_data.py's job.
 Exits with code 1 if any check fails, so a pipeline can refuse to continue.
 
 Usage:
@@ -35,7 +35,7 @@ def run_checks(df: pd.DataFrame) -> list[tuple[str, str, bool, str]]:
 
     # --- Validity: tickers from the approved set
     unknown = set(df["Ticker"].unique()) - VALID_TICKERS
-    check("Validity", "Tickers in valid set", not unknown, f"unknown: {unknown or '—'}")
+    check("Validity", "Tickers in valid set", not unknown, f"unknown: {unknown or '-'}")
 
     # --- Completeness: no nulls anywhere
     nulls = df.isna().sum().sum()
@@ -46,7 +46,7 @@ def run_checks(df: pd.DataFrame) -> list[tuple[str, str, bool, str]]:
     lo, hi = ROWS_PER_TICKER
     bad_counts = counts[(counts < lo) | (counts > hi)]
     check("Completeness", f"Rows per ticker in [{lo}, {hi}]", bad_counts.empty,
-          f"out of range: {bad_counts.to_dict() or '—'}")
+          f"out of range: {bad_counts.to_dict() or '-'}")
 
     # --- Uniqueness: one row per (Ticker, Date)
     dupes = df.duplicated(subset=["Ticker", "Date"]).sum()
@@ -86,7 +86,7 @@ def main() -> None:
     results = run_checks(df)
     failed = [r for r in results if not r[2]]
 
-    print(f"\nQUALITY REPORT — {target.name} ({len(df)} rows)")
+    print(f"\nQUALITY REPORT - {target.name} ({len(df)} rows)")
     print("-" * 72)
     for dimension, name, passed, detail in results:
         status = "PASS" if passed else "FAIL"

@@ -4,7 +4,7 @@ Turns cleaned/prices_clean.csv into a star schema:
   Fact_DailyPrices  - one row per (Ticker, Date), with derived KPI columns
   Dim_Company       - one row per ticker (context that doesn't change daily)
   Dim_Date          - one row per calendar date (enables time intelligence)
-Output: outputs/model/*.csv  ->  consumed by Excel (Hour 7) and Power BI (Hour 8).
+Output: outputs/model/*.csv  ->  consumed by the Excel report and Power BI dashboard.
 """
 from pathlib import Path
 
@@ -28,7 +28,7 @@ def build_fact(df: pd.DataFrame) -> pd.DataFrame:
     df = df.sort_values(["Ticker", "Date"]).copy()
     g = df.groupby("Ticker")
 
-    # KPI 1: daily return % — the currency-proof measure
+    # KPI 1: daily return % - the currency-proof measure
     df["DailyReturnPct"] = g["Close"].pct_change() * 100
 
     # KPI 2: growth of 100 (cumulative return, base 100 at period start)
@@ -40,7 +40,7 @@ def build_fact(df: pd.DataFrame) -> pd.DataFrame:
     # KPI 4: 30-day rolling volatility (std dev of daily returns)
     df["Volatility30"] = g["DailyReturnPct"].transform(lambda s: s.rolling(30).std())
 
-    # KPI 5: volume spike — day's volume > 2x its 30-day average
+    # KPI 5: volume spike - day's volume > 2x its 30-day average
     avg_vol_30 = g["Volume"].transform(lambda s: s.rolling(30).mean())
     df["VolumeSpike"] = (df["Volume"] > 2 * avg_vol_30).astype(int)
 
@@ -48,7 +48,7 @@ def build_fact(df: pd.DataFrame) -> pd.DataFrame:
 
 
 def build_dim_date(df: pd.DataFrame) -> pd.DataFrame:
-    # Continuous calendar (not just trading days) — the BI-standard approach:
+    # Continuous calendar (not just trading days) - the BI-standard approach:
     # weekends/holidays exist in the calendar even if no fact rows point to them.
     dates = pd.date_range(df["Date"].min(), df["Date"].max(), freq="D")
     dim = pd.DataFrame({"Date": dates})

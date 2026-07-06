@@ -1,14 +1,14 @@
-# Business Brief — Market Pulse
+# Business Brief - Market Pulse
 
 **Date:** 2026-07-05 · **Analyst:** Mishank · **Stakeholder:** Investment club (5 members)
 
 ## The Ask (in the stakeholder's words)
 
-> "We each track stocks separately in random spreadsheets. We want one dashboard, refreshed monthly, that shows how our 5 watchlist stocks are doing — trends, risk, and anything unusual — so our monthly meeting takes 15 minutes instead of an hour."
+> "We each track stocks separately in random spreadsheets. We want one dashboard, refreshed monthly, that shows how our 5 watchlist stocks are doing - trends, risk, and anything unusual - so our monthly meeting takes 15 minutes instead of an hour."
 
 ## Scope
 
-- **Tickers:** AAPL, MSFT, TSLA, JPM, RELIANCE.NS (US tech, US finance, India — deliberate variety)
+- **Tickers:** AAPL, MSFT, TSLA, JPM, RELIANCE.NS (US tech, US finance, India - deliberate variety)
 - **Period:** last 2 years of daily prices
 - **Refresh:** monthly
 
@@ -30,5 +30,3 @@ Dashboard answers in <15 min: Who won/lost this month? Which stock is riskiest? 
 
 Price prediction, buy/sell recommendations, intraday data.
 
----
-*Lesson: every deliverable traces back to a stakeholder question. If a chart doesn't answer one of the questions above, it doesn't belong on the dashboard.*

@@ -1,7 +1,7 @@
 """
 Data Collection (Bronze layer)
 Downloads 2 years of daily prices for the watchlist via the yfinance API
-and saves them UNTOUCHED to raw/. Raw data is never edited — if collection
+and saves them UNTOUCHED to raw/. Raw data is never edited - if collection
 logic changes, we re-collect; we don't hand-edit.
 """
 from pathlib import Path
@@ -30,7 +30,7 @@ def collect() -> None:
             progress=False,
         )
         if df.empty:
-            print(f"  WARNING: no data returned for {ticker} — check ticker symbol")
+            print(f"  WARNING: no data returned for {ticker} - check ticker symbol")
             continue
 
         df = df.reset_index()

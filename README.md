@@ -11,16 +11,16 @@ An investment club tracks 5 stocks and needs a monthly refreshed dashboard cover
 ## Pipeline (mirrors cloud medallion architecture)
 
 ```
-raw/  (Bronze — untouched source data)
-  └─► cleaned/  (Silver — validated, cleaned)
-        └─► outputs/  (Gold — modeled star schema, reports)
+raw/  (Bronze - untouched source data)
+  └─► cleaned/  (Silver - validated, cleaned)
+        └─► outputs/  (Gold - modeled star schema, reports)
 ```
 
 ## Project Structure
 
 | Folder | Purpose |
 |--------|---------|
-| `raw/` | Raw data exactly as collected — never edited by hand |
+| `raw/` | Raw data exactly as collected - never edited by hand |
 | `cleaned/` | Cleaned, validated datasets |
 | `outputs/` | Star-schema tables, Excel report, Power BI file |
 | `scripts/` | Python: collect → clean → validate → model |

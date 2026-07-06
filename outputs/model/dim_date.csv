@@ -730,3 +730,6 @@ Date,Year,Quarter,MonthNum,Month,YearMonth,Weekday
 2026-07-01,2026,Q3,7,Jul,2026-07,Wednesday
 2026-07-02,2026,Q3,7,Jul,2026-07,Thursday
 2026-07-03,2026,Q3,7,Jul,2026-07,Friday
+2026-07-04,2026,Q3,7,Jul,2026-07,Saturday
+2026-07-05,2026,Q3,7,Jul,2026-07,Sunday
+2026-07-06,2026,Q3,7,Jul,2026-07,Monday

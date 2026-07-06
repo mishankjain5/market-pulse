@@ -1,4 +1,4 @@
-# Data Dictionary — Market Pulse
+# Data Dictionary - Market Pulse
 
 ## Source
 
@@ -15,7 +15,7 @@
 | File | Description |
 |------|-------------|
 | `prices_raw.csv` | Untouched API output. Never hand-edited. |
-| `prices_messy.csv` | Training copy with injected defects (`scripts/make_messy.py`) — used for the cleaning exercise. |
+| `prices_messy.csv` | Training copy with injected defects (`scripts/make_messy.py`) - used for the cleaning exercise. |
 
 ## Columns (prices_raw.csv)
 
@@ -32,5 +32,5 @@
 ## Known Caveats
 
 - **Currency mix:** RELIANCE.NS is priced in INR; others in USD. Cross-stock comparisons must use % returns, never absolute prices.
-- **Calendar mismatch:** RELIANCE.NS has ~499 rows vs 501 for US tickers — India (NSE) and US (NYSE/NASDAQ) observe different market holidays. A missing date is not automatically missing data.
-- **Adjusted prices:** historical prices won't match "what the price actually was that day" if a split/dividend occurred since — this is intentional and correct for trend analysis.
+- **Calendar mismatch:** RELIANCE.NS has ~499 rows vs 501 for US tickers - India (NSE) and US (NYSE/NASDAQ) observe different market holidays. A missing date is not automatically missing data.
+- **Adjusted prices:** historical prices won't match "what the price actually was that day" if a split/dividend occurred since - this is intentional and correct for trend analysis.
